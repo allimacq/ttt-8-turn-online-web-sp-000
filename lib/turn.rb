@@ -8,12 +8,14 @@ def turn(board)
   
   #now calling the input_to_index method to convert the input to an integer and to the proper ruby index equivalent
   index = input_to_index(input)
-  
-  #calling the move index
-  move(board, index)
-  
-  #now we need to validate the user's move
-  valid_move?(board, index)
+  if valid_move?(board, index) == true
+    #calling the move index
+    move(board, index)
+  else
+    until valid_move(board, index) == true
+      turn(board)
+    end
+  end
   
   display_board(board)
 
