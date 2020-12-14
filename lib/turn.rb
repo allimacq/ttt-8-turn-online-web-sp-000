@@ -12,7 +12,7 @@ def turn(board)
     #calling the move index
     move(board, index)
   else
-    until valid_move(board, index) == true
+    until valid_move?(board, index) == true
       turn(board)
     end
   end
@@ -53,8 +53,6 @@ def valid_move?(board, index)
   if index.between?(0,8) && position_taken?(board, index) == false
     true
   elsif index > 9 || index < 0
-    puts "Please enter 1-9:"
-    input = gets.to_i
     false
   elsif position_taken?(board, index) == true
     false
