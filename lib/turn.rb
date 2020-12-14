@@ -12,9 +12,7 @@ def turn(board)
     #calling the move index
     move(board, index)
   else
-    until valid_move?(board, index) == true
-      turn(board)
-    end
+    turn(board)
   end
   
   display_board(board)
